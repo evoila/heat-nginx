@@ -1,0 +1,3 @@
+resource_registry:
+  "Evoila::Deployment::Nginx": src/deploy-nginx-centos.yaml
+  "Evoila::Deployment::Nginx::Vhost": src/deploy-nginx-vhost.yaml
