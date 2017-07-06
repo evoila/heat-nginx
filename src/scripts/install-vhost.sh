@@ -7,7 +7,7 @@ CONFIG=${CONFIG}
 NAME=$( echo $NAME | sed 's/[^a-zA-Z_-]/_/g' )
 
 # Variables to be used within config
-PRIMARY_ADDR=$(ip addr show dev `ip route show | grep -E "^default" | awk '{ print $5 }'` | grep "inet " | awk '{ print $2 }' | cut -d "/" -f1)
+PRIMARY_ADDR=$(ip addr show dev `ip route show | grep -E "^default" | awk '{ print $5 }'` | grep "inet " | awk '{ print $2 }' | cut -d "/" -f1 | head -n1)
 
 # Eval config to replace variables
 RESULTING_CONFIG=$(eval echo \""$CONFIG"\")
